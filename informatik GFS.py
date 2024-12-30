@@ -1,0 +1,99 @@
+import time
+
+print("🎰 Willkommen beim erweiterten Lottospiel! 🎰")
+
+# Geldeinsatz
+einsatz = float(input("Bitte geben Sie Ihren Einsatz in Euro ein: "))
+
+# Benutzereingabe für Lottozahlen
+print("Bitte geben Sie Ihre 6 Lottozahlen zwischen 1 und 49 ein.")
+benutzerzahlen = []
+i = 0
+while i < 6:
+    zahl = int(input(f"Zahl {i+1}: "))
+    if 1 <= zahl <= 49 and zahl not in benutzerzahlen:
+        benutzerzahlen.append(zahl)
+        i += 1
+    else:
+        print("Ungültige Eingabe. Bitte eine Zahl zwischen 1 und 49 wählen, die noch nicht gewählt wurde.")
+
+# Benutzereingabe für Superzahl
+benutzer_superzahl = -1
+while benutzer_superzahl < 0 or benutzer_superzahl > 9:
+    benutzer_superzahl = int(input("Bitte geben Sie Ihre Superzahl zwischen 0 und 9 ein: "))
+    if benutzer_superzahl < 0 or benutzer_superzahl > 9:
+        print("Ungültige Eingabe. Die Superzahl muss zwischen 0 und 9 liegen.")
+
+# Eigene Zufallszahlengenerierung
+def eigener_zufall(max_wert):
+    return int((time.time() * 1000) % max_wert) + 1
+
+# Ziehung der Lottozahlen und Superzahl
+gewinnzahlen = []
+while len(gewinnzahlen) < 6:
+    zahl = eigener_zufall(49)
+    if zahl not in gewinnzahlen:
+        gewinnzahlen.append(zahl)
+superzahl = eigener_zufall(10) - 1
+
+# Bubble Sort Implementierung
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr
+
+# Vergleich und Auswertung
+richtige = []
+for zahl in benutzerzahlen:
+    if zahl in gewinnzahlen:
+        richtige.append(zahl)
+anzahl_richtige = len(richtige)
+superzahl_richtig = benutzer_superzahl == superzahl
+
+# Ergebnisausgabe
+print("\n🎉 Die Ziehung ist abgeschlossen! 🎉")
+print(f"Ihre Zahlen: {bubble_sort(benutzerzahlen)} - Superzahl: {benutzer_superzahl}")
+print(f"Gewinnzahlen: {bubble_sort(gewinnzahlen)} - Superzahl: {superzahl}")
+print(f"Sie haben {anzahl_richtige} richtige Zahl(en):")
+if anzahl_richtige > 0:
+    print(f"Richtige Zahlen: {bubble_sort(richtige)}")
+
+if superzahl_richtig:
+    print("🌟 Sie haben die richtige Superzahl!")
+
+# Gewinnauswertung
+gewinn = 0
+if anzahl_richtige == 6 and superzahl_richtig:
+    gewinn = einsatz * 1000000
+    print(f"🏆 JACKPOT! Sie haben alle Zahlen und die Superzahl richtig! Gewinn: {gewinn:.2f} €")
+elif anzahl_richtige == 6:
+    gewinn = einsatz * 100000
+    print(f"🎈 Fantastisch! Sie haben alle 6 Zahlen richtig! Gewinn: {gewinn:.2f} €")
+elif anzahl_richtige == 5 and superzahl_richtig:
+    gewinn = einsatz * 10000
+    print(f"🎊 Großartig! 5 Richtige und die Superzahl! Gewinn: {gewinn:.2f} €")
+elif anzahl_richtige == 5:
+    gewinn = einsatz * 1000
+    print(f"🎉 Super! Sie haben 5 Richtige! Gewinn: {gewinn:.2f} €")
+elif anzahl_richtige == 4:
+    gewinn = einsatz * 100
+    print(f"👍 Gut gemacht! 4 Richtige! Gewinn: {gewinn:.2f} €")
+elif anzahl_richtige == 3:
+    gewinn = einsatz * 10
+    print(f"😊 Nicht schlecht! 3 Richtige! Gewinn: {gewinn:.2f} €")
+else:
+    print(f"😔 Leider kein Gewinn. Sie haben Ihren Einsatz von {einsatz:.2f} € verloren.")
+
+# Gewinnwahrscheinlichkeiten
+print("\n📊 Gewinnwahrscheinlichkeiten:")
+print(f"6 Richtige + Superzahl: 1 zu {15537573}")
+print(f"6 Richtige: 1 zu {13983816}")
+print(f"5 Richtige + Superzahl: 1 zu {542008}")
+print(f"5 Richtige: 1 zu {60096}")
+print(f"4 Richtige: 1 zu {1032}")
+print(f"3 Richtige: 1 zu {57}")
+
+print("\n🍀 Vielen Dank fürs Spielen! Möge das Glück mit Ihnen sein! 🍀")
