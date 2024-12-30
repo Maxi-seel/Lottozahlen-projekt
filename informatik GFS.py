@@ -36,15 +36,6 @@ while len(gewinnzahlen) < 6:
         gewinnzahlen.append(zahl)
 superzahl = eigener_zufall(10) - 1
 
-# Bubble Sort Implementierung
-def bubble_sort(arr):
-    n = len(arr)
-    for i in range(n):
-        for j in range(0, n-i-1):
-            if arr[j] > arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-    return arr
-
 # Vergleich und Auswertung
 richtige = []
 for zahl in benutzerzahlen:
@@ -55,11 +46,11 @@ superzahl_richtig = benutzer_superzahl == superzahl
 
 # Ergebnisausgabe
 print("\n🎉 Die Ziehung ist abgeschlossen! 🎉")
-print(f"Ihre Zahlen: {bubble_sort(benutzerzahlen)} - Superzahl: {benutzer_superzahl}")
-print(f"Gewinnzahlen: {bubble_sort(gewinnzahlen)} - Superzahl: {superzahl}")
+print(f"Ihre Zahlen: {benutzerzahlen} - Superzahl: {benutzer_superzahl}")
+print(f"Gewinnzahlen: {gewinnzahlen} - Superzahl: {superzahl}")
 print(f"Sie haben {anzahl_richtige} richtige Zahl(en):")
 if anzahl_richtige > 0:
-    print(f"Richtige Zahlen: {bubble_sort(richtige)}")
+    print(f"Richtige Zahlen: {richtige}")
 
 if superzahl_richtig:
     print("🌟 Sie haben die richtige Superzahl!")
