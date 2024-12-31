@@ -26,7 +26,8 @@ while benutzer_superzahl < 0 or benutzer_superzahl > 9:
 
 # Eigene Zufallszahlengenerierung
 def eigener_zufall(max_wert):
-    return int((time.time() * 1000) % max_wert) + 1
+    time.sleep(0.01)  # Kleine Verzögerung
+    return int((time.time() * 1000000) % max_wert) + 1
 
 # Ziehung der Lottozahlen und Superzahl
 gewinnzahlen = []
@@ -50,7 +51,7 @@ print(f"Ihre Zahlen: {benutzerzahlen} - Superzahl: {benutzer_superzahl}")
 print(f"Gewinnzahlen: {gewinnzahlen} - Superzahl: {superzahl}")
 print(f"Sie haben {anzahl_richtige} richtige Zahl(en):")
 if anzahl_richtige > 0:
-    print(f"Richtige Zahlen: {richtige}")
+     print(f"Richtige Zahlen: {richtige}")
 
 if superzahl_richtig:
     print("🌟 Sie haben die richtige Superzahl!")
