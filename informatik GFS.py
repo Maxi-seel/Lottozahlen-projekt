@@ -17,12 +17,10 @@ while i < 6:
     else:
         print("Ungültige Eingabe. Bitte eine Zahl zwischen 1 und 49 wählen, die noch nicht gewählt wurde.")
 
-# Benutzereingabe für Superzahl
-benutzer_superzahl = -1
-while benutzer_superzahl < 0 or benutzer_superzahl > 9:
-    benutzer_superzahl = int(input("Bitte geben Sie Ihre Superzahl zwischen 0 und 9 ein: "))
-    if benutzer_superzahl < 0 or benutzer_superzahl > 9:
-        print("Ungültige Eingabe. Die Superzahl muss zwischen 0 und 9 liegen.")
+# Benutzereingabe für Superzah
+benutzer_superzahl = int(input("Bitte geben Sie Ihre Superzahl zwischen 0 und 9 ein: "))
+if benutzer_superzahl < 0 or benutzer_superzahl > 9:
+    print("Ungültige Eingabe. Die Superzahl muss zwischen 0 und 9 liegen.")
 
 # Eigene Zufallszahlengenerierung
 def eigener_zufall(max_wert):
