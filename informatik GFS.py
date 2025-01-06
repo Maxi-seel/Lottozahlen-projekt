@@ -78,12 +78,12 @@ else:
     print(f"😔 Leider kein Gewinn. Sie haben Ihren Einsatz von {einsatz:.2f} € verloren.")
 
 # Gewinnwahrscheinlichkeiten
-print("\n📊 Gewinnwahrscheinlichkeiten:")
-print(f"6 Richtige + Superzahl: 1 zu {15537573}")
-print(f"6 Richtige: 1 zu {13983816}")
-print(f"5 Richtige + Superzahl: 1 zu {542008}")
-print(f"5 Richtige: 1 zu {60096}")
-print(f"4 Richtige: 1 zu {1032}")
-print(f"3 Richtige: 1 zu {57}")
+print("📊 Gewinnwahrscheinlichkeiten:")
+print(f"6 Richtige + Superzahl: 1 zu 15537573")
+print(f"6 Richtige: 1 zu 13983816")
+print(f"5 Richtige + Superzahl: 1 zu 542008")
+print(f"5 Richtige: 1 zu 60096")
+print(f"4 Richtige: 1 zu 1032")
+print(f"3 Richtige: 1 zu 57")
 
-print("\n🍀 Vielen Dank fürs Spielen! Möge das Glück mit Ihnen sein! 🍀")
+print("🍀 Vielen Dank fürs Spielen! Möge das Glück mit Ihnen sein! 🍀")
