@@ -79,7 +79,7 @@ else:
 
 # Gewinnwahrscheinlichkeiten
 print("📊 Gewinnwahrscheinlichkeiten:")
-print("6 Richtige + Superzahl: 1 zu 15537573")
+print("6 Richtige + Superzahl: 1 zu 139838160")
 print("6 Richtige: 1 zu 13983816")
 print("5 Richtige + Superzahl: 1 zu 542008")
 print("5 Richtige: 1 zu 60096")
