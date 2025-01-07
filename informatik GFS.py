@@ -17,10 +17,10 @@ while i < 6:
     else:
         print("Ungültige Eingabe. Bitte eine Zahl zwischen 1 und 49 wählen, die noch nicht gewählt wurde.")
 
-# Benutzereingabe für Superzah
+# Benutzereingabe für Superzahl
 benutzer_superzahl = int(input("Bitte geben Sie Ihre Superzahl zwischen 0 und 9 ein: "))
-if benutzer_superzahl < 0 or benutzer_superzahl > 9:
-    print("Ungültige Eingabe. Die Superzahl muss zwischen 0 und 9 liegen.")
+while benutzer_superzahl < 0 or benutzer_superzahl > 9:
+    benutzer_superzahl = int(input("Bitte geben Sie Ihre Superzahl zwischen 0 und 9 ein: "))
 
 # Eigene Zufallszahlengenerierung
 def eigener_zufall(max_wert):
@@ -44,7 +44,7 @@ anzahl_richtige = len(richtige)
 superzahl_richtig = benutzer_superzahl == superzahl
 
 # Ergebnisausgabe
-print("\n🎉 Die Ziehung ist abgeschlossen! 🎉")
+print("🎉 Die Ziehung ist abgeschlossen! 🎉")
 print(f"Ihre Zahlen: {benutzerzahlen} - Superzahl: {benutzer_superzahl}")
 print(f"Gewinnzahlen: {gewinnzahlen} - Superzahl: {superzahl}")
 print(f"Sie haben {anzahl_richtige} richtige Zahl(en):")
@@ -79,11 +79,11 @@ else:
 
 # Gewinnwahrscheinlichkeiten
 print("📊 Gewinnwahrscheinlichkeiten:")
-print(f"6 Richtige + Superzahl: 1 zu 15537573")
-print(f"6 Richtige: 1 zu 13983816")
-print(f"5 Richtige + Superzahl: 1 zu 542008")
-print(f"5 Richtige: 1 zu 60096")
-print(f"4 Richtige: 1 zu 1032")
-print(f"3 Richtige: 1 zu 57")
+print("6 Richtige + Superzahl: 1 zu 15537573")
+print("6 Richtige: 1 zu 13983816")
+print("5 Richtige + Superzahl: 1 zu 542008")
+print("5 Richtige: 1 zu 60096")
+print("4 Richtige: 1 zu 1032")
+print("3 Richtige: 1 zu 57")
 
 print("🍀 Vielen Dank fürs Spielen! Möge das Glück mit Ihnen sein! 🍀")
